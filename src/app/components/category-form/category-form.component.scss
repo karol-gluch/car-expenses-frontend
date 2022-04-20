@@ -1,0 +1,12 @@
+button {
+    margin-left: 10%;
+}
+
+.btn-outline-warning {
+    border-color: #db9600;
+    color: #db9600;
+    &:hover {
+        background-color: #db9600;
+        color: #1d2226;
+    }
+}

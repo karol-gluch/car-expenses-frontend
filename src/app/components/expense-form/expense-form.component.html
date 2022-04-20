@@ -1,0 +1,53 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="modal-basic-title">Dodawanie nowego wpisu</h5>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Nazwa:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nazwa"
+          [(ngModel)]="expense.name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Koszt:</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Koszt"
+          [(ngModel)]="expense.cost" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Miejsce naprawy / zakupu:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Miejsce"
+          [(ngModel)]="expense.place" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Data usługi:</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="Data" data-date-format="yyyy-mm-dd"
+                 [(ngModel)]="dateHelper" ngbDatepicker #d="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+        </div>
+      </div>
+
+      <label class="control-label">Kategoria</label>
+      <div class="form-group">
+        <select class="form-control form-control-inline" [(ngModel)]="expense.categoryId" data-content=true>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>      
+      </div>
+        
+      </div>
+    <div class="modal-footer">
+      <button type="button"
+      class="btn btn-outline-dark"
+      (click)="addExpense(); modal.dismiss()"
+      [disabled]="expense.name === '' || expense.cost < 1 || expense.place === ''"
+      >Zapisz</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-sm btn-outline-warning" (click)="open(content)">Dodaj nowy wpis</button><br><br>

@@ -1,0 +1,25 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Nazwa</th>
+      <th scope="col">Cena</th>
+      <th scope="col">Miejsce</th>
+      <th scope="col">Data</th>
+      <th scope="col">Kategoria</th>
+      <th scope="col">Edycja</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let expense of expenses">
+      <td>{{ expense.name }}</td>
+      <td>{{ expense.cost }} zł</td>
+      <td>{{ expense.place }}</td>
+      <td>{{ expense.actualDate }}</td>
+      <td><span class="badge" [style.background-color]="expense.category?.color">{{ expense.category?.name }}</span></td>
+      <td><i class="fa fa-trash-o" ngbTooltip="Usuń wpis"></i></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-expense-form (newExpense)="onNewExpense()"></app-expense-form>
+  <app-category-form (newCategory)="onNewCategory()"></app-category-form>
