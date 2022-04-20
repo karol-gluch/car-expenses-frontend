@@ -17,4 +17,8 @@ export class ExpenseService {
   public save(expense: ExpenseDto) {
     return this.http.post<ExpenseDto>(environment.baseURL + 'api/v1/expenses/save', expense);
   }
+
+  public delete(expenseId: number) {
+    return this.http.delete(environment.baseURL + 'api/v1/expenses/delete/' + expenseId);
+  }
 }
