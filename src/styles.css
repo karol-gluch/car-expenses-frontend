@@ -1,5 +1,11 @@
 @import '~ngx-toastr/toastr';
 
 body {
-    background-color: #1d2226;
+  background-color: #18191a;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  background-color: #2a2c2d;
+  color: #cacfd2;
+  border-color: #393c3d;
 }

@@ -14,14 +14,14 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #242526;
     margin-bottom: 70px;
   }
-  
+
   li {
     float: left;
   }
-  
+
   li a {
     display: block;
     color: #fff;
@@ -29,11 +29,11 @@ ul {
     padding: 14px 30px;
     text-decoration: none;
   }
-  
+
   li a:hover:not(.active) {
     background-color: #111;
   }
-  
+
   .active {
     border-bottom: 3px solid #db9600;
   }
