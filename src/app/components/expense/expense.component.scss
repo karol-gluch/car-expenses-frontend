@@ -16,3 +16,24 @@
 .fa-trash-o:hover {
     color: #c90d00;
 }
+
+.emptyExpenses {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Raleway';
+  color: #fff;
+}
+
+.emptyExpenses p {
+  font-size: 18px;
+}
+
+div.emptyExpensesImage {
+  margin-top: 50px;
+  background-position-x: center;
+  background-image: url("../../../images/emptyTable.png");
+  height: 270px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 300px;
+}

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ExpenseService} from "../../services/expense.service";
 import {CategoryService} from "../../services/category.service";
 import {ToastrService} from "ngx-toastr";
 import {Category} from "../../models/Category";

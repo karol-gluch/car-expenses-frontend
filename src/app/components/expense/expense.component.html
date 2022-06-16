@@ -1,3 +1,4 @@
+<div class="" *ngIf="expenses?.length !== 0; else emptyExpenses">
 <table class="table table-striped">
     <thead>
     <tr>
@@ -22,6 +23,15 @@
   </table>
 
   <app-expense-form (newExpense)="onNewExpense()"></app-expense-form>
+</div>
+<ng-template #emptyExpenses>
+  <div class="emptyExpenses">
+    <div class="emptyExpensesImage"> </div>
+    <b>Ale tu pusto!</b>
+    <p>Dodaj pierwszy wpis</p>
+    <app-expense-form (newExpense)="onNewExpense()"></app-expense-form>
+  </div>
+</ng-template>
 
   <ng-template #deleteEntry let-modal>
     <div class="modal-header">

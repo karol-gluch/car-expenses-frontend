@@ -7,8 +7,8 @@
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nazwa:</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nazwa"
+        <label for="name">Nazwa:</label>
+        <input type="text" class="form-control" id="name" placeholder="Nazwa"
           [(ngModel)]="category.name" required>
       </div>
 
@@ -16,9 +16,9 @@
       <div class="form-group">
         <select class="form-control form-control-inline" [(ngModel)]="category.color">
             <option *ngFor="let color of colors | keyvalue" [value]="color.value">{{ color.key }}</option>
-        </select>    
+        </select>
       </div>
-        
+
       </div>
     <div class="modal-footer">
       <button type="button"
@@ -28,5 +28,7 @@
       >Zapisz</button>
     </div>
   </ng-template>
-  
-  <button class="btn btn-sm btn-outline-warning" (click)="open(content)">Dodaj nową kategorię</button><br><br>
+
+<div class="col-md-12 text-center">
+  <button class="btn btn-sm btn-outline-warning" (click)="open(content)">Dodaj nową kategorię</button>
+</div>
