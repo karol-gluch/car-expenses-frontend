@@ -6,8 +6,6 @@ import { Expense } from 'src/app/models/Expense';
 import { ExpenseDto } from 'src/app/models/ExpenseDto';
 import { CategoryService } from 'src/app/services/category.service';
 import { ExpenseService } from 'src/app/services/expense.service';
-import { formatDate } from '@angular/common';
-import { NodeWithI18n } from '@angular/compiler';
 
 @Component({
   selector: 'app-expense-form',
@@ -32,7 +30,11 @@ export class ExpenseFormComponent implements OnInit {
   }
 
   open(content: any) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
+    if(this.categories.length == 0) {
+      this.toastr.error('Aby dodać wpis najpierw należy dodać kategorię.', 'Brak kategorii');
+    } else {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    }
   }
 
   public addExpense() {

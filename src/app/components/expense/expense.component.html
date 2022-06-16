@@ -1,5 +1,5 @@
-<div class="" *ngIf="expenses?.length !== 0; else emptyExpenses">
-<table class="table table-striped">
+<div *ngIf="expenses?.length !== 0; else emptyExpenses">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th scope="col">Nazwa</th>
@@ -26,25 +26,25 @@
 </div>
 <ng-template #emptyExpenses>
   <div class="emptyExpenses">
-    <div class="emptyExpensesImage"> </div>
+    <div class="emptyExpensesImage"></div>
     <b>Ale tu pusto!</b>
     <p>Dodaj pierwszy wpis</p>
     <app-expense-form (newExpense)="onNewExpense()"></app-expense-form>
   </div>
 </ng-template>
 
-  <ng-template #deleteEntry let-modal>
-    <div class="modal-header">
-      <h5 class="modal-title" id="modal-basic-title">Usuwanie wpisu</h5>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      Czy na pewno chcesz usunąć wybrany wpis?
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-danger" (click)="deleteExpense(); modal.dismiss()">Usuń</button>
-      <button class="btn btn-outline-dark" (click)="modal.dismiss()" style="margin-left: 5px">Anuluj</button>
-    </div>
-  </ng-template>
+<ng-template #deleteEntry let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-basic-title">Usuwanie wpisu</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Czy na pewno chcesz usunąć wybrany wpis?
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger" (click)="deleteExpense(); modal.dismiss()">Usuń</button>
+    <button class="btn btn-outline-dark" (click)="modal.dismiss()" style="margin-left: 5px">Anuluj</button>
+  </div>
+</ng-template>
