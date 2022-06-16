@@ -36,10 +36,6 @@ export class ExpenseComponent implements OnInit {
     })
   }
 
-  public onNewCategory() {
-    this.expenseFormComponent.getCategories();
-  }
-
   public deleteExpense() {
     this.expenseService.delete(this.idToDelete).subscribe(() => {
       this.findAllExpenses();

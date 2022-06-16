@@ -1,0 +1,39 @@
+.table {
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+.fa {
+  color: #fff;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-trash-o:hover {
+  color: #c90d00;
+}
+
+.emptyCategories {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Raleway';
+  color: #fff;
+}
+
+.emptyCategories p {
+  font-size: 18px;
+}
+
+div.emptyCategoriesImage {
+  margin-top: 50px;
+  background-position-x: center;
+  background-image: url("../../../images/emptyTable.png");
+  height: 270px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 300px;
+}

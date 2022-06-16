@@ -11,13 +11,16 @@ import { ExpenseFormComponent } from './components/expense-form/expense-form.com
 import { CategoryService } from './services/category.service';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CategoryComponent } from './components/category/category.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpenseComponent,
     ExpenseFormComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [ExpenseService, CategoryService],
   bootstrap: [AppComponent]

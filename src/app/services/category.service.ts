@@ -9,7 +9,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   public findAll(): Observable<Category[]> {
     return this.http.get<Category[]>(environment.baseURL + 'api/v1/categories');
   }
@@ -18,4 +18,7 @@ export class CategoryService {
     return this.http.post<Category>(environment.baseURL + 'api/v1/categories/save', category);
   }
 
+  public delete(expenseId: number) {
+    return this.http.delete(environment.baseURL + 'api/v1/categories/delete/' + expenseId);
+  }
 }

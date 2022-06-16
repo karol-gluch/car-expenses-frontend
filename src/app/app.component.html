@@ -1,7 +1,6 @@
 <ul>
-  <li><a class="active" href="#home">Wydatki</a></li>
-  <li><a href="#news">Kategorie</a></li>
-  <li><a href="#contact">Ustawienia</a></li>
+  <li><a [routerLink]="['/expense']" routerLinkActive='active'>Wydatki</a></li>
+  <li><a [routerLink]="['/category']" routerLinkActive='active'>Kategorie</a></li>
 </ul>
 
-<app-expense></app-expense>
+<router-outlet></router-outlet>
